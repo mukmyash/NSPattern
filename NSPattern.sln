@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8B69C0D6-A8B2-4D25-A2A0-1113B47B5CA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSPattern", "src\NSPattern\NSPattern.csproj", "{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2A1EC6E9-2610-45E5-9E80-D82F93473B8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSPattern.Test", "tests\NSPattern.Test\NSPattern.Test.csproj", "{5FFA4F04-5D2A-4401-99FA-5A371955402C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFA4F04-5D2A-4401-99FA-5A371955402C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFA4F04-5D2A-4401-99FA-5A371955402C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFA4F04-5D2A-4401-99FA-5A371955402C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFA4F04-5D2A-4401-99FA-5A371955402C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66} = {8B69C0D6-A8B2-4D25-A2A0-1113B47B5CA1}
+		{5FFA4F04-5D2A-4401-99FA-5A371955402C} = {2A1EC6E9-2610-45E5-9E80-D82F93473B8A}
+	EndGlobalSection
+EndGlobal

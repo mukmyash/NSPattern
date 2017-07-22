@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <Description>Interface and abstract class for patterns</Description>
+    <Authors>Mukmyash</Authors>
+    <PackageId>NSPattern</PackageId>
+    <AssemblyName>NSPattern</AssemblyName>
+    <PackageProjectUrl>https://github.com/mukmyash/NSPattern</PackageProjectUrl>
+    <RepositoryUrl>git://github.com/mukmyash/NSPattern</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>pattern, specification-pattern,decorator-patter,repository-pattern net-standard</PackageTags>
+    <PackageReleaseNotes>Supported pattern 
+-decorator
+-specification
+-repository</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>
