@@ -1,0 +1,10 @@
+version: 1.0.{build}
+configuration: Release
+platform: Any CPU
+build_script:
+- cmd: "dotnet restore\ndotnet build \ndotnet pack src\\NSPattern --configuration %CONFIGURATION% -o artifact"
+test_script:
+- cmd: dotnet test tests\NSPattern.Test\NSPattern.Test.csproj -c %CONFIGURATION%
+artifacts:
+- path: src\NSPattern\artifact\*.nupkg
+  name: NSPattern
