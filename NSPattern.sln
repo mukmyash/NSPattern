@@ -1,15 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8B69C0D6-A8B2-4D25-A2A0-1113B47B5CA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSPattern", "src\NSPattern\NSPattern.csproj", "{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSPattern", "src\NSPattern\NSPattern.csproj", "{198C0F06-165E-4FC4-A6DA-E31EAE6A1C66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2A1EC6E9-2610-45E5-9E80-D82F93473B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSPattern.Test", "tests\NSPattern.Test\NSPattern.Test.csproj", "{5FFA4F04-5D2A-4401-99FA-5A371955402C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSPattern.Test", "tests\NSPattern.Test\NSPattern.Test.csproj", "{5FFA4F04-5D2A-4401-99FA-5A371955402C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E8C38B8-BD16-47FE-9AAA-1D5B56D7EF9A}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.MD = README.MD
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
