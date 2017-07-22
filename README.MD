@@ -1,4 +1,5 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/develop?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/develop)
+___develop___	[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/develop?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/develop)
+___master___	[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/master?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/master)
 # NSPattern
 __More sample in tests__
 
