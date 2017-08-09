@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NSPattern.Specification.Expression
 {
-    public interface ISpecificatinExpression<TEntity> : ISpecification<TEntity>
+    public interface ISpecificationExpression<TEntity> : ISpecification<TEntity>
     {
         Expression<Func<TEntity, bool>> ToExpression();
     }
