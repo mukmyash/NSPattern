@@ -5,10 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NSPattern.Decorator;
 
 namespace NSPattern.Test.Repository.Model
 {
-    public class Repository : IRepository<SampleEntity>
+    public class Repository : IRepository
     {
         public DataBase DB { get; set; }
 
@@ -31,7 +32,7 @@ namespace NSPattern.Test.Repository.Model
 
         public IList<SampleEntity> GetList(ISpecification<SampleEntity> specification, int offset, int count)
         {
-            var specificationExpression = specification as ISpecificatinExpression<SampleEntity>;
+            var specificationExpression = specification as ISpecificationExpression<SampleEntity>;
             return DB.Samples.Where(specificationExpression.ToExpression().Compile())
                 .Skip(offset).Take(count).ToList();
         }

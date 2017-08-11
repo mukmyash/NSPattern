@@ -1,11 +1,15 @@
-___develop___	[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/develop?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/develop)
-___master___	[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/master?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/master)
+| ___develop___ |[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/develop?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/develop)|
+|---|---|
+|___master___|[![Build status](https://ci.appveyor.com/api/projects/status/9i1829duoa0rcsan/branch/master?svg=true)](https://ci.appveyor.com/project/mukmyash/nspattern/branch/master)|
 # NSPattern
-__More sample in tests__
+__Больше примеров в тестах__
 
+
+
+***
 Decorator Example
 --------
-Create interface and implements from ```IDecorateable```
+Создайте интерфейс класса который необходимо затекорировать. Инерфейс должен наследоваться от ```IDecorateable```
 ```C#
 	public interface IAnimal: IDecorateable
 	{
@@ -13,7 +17,7 @@ Create interface and implements from ```IDecorateable```
 	}
 ```
 
-Create class and implements interface created on previus step
+Создайте класс который реализует интерфейс из первого шага
 ```C#
 	public class Duck : IAnimal
 	{
@@ -24,7 +28,7 @@ Create class and implements interface created on previus step
 	}
 ```
 
-Create decorators and implements ```IDecorator<I>``` and ```I``` (where ```I``` is interface created on first step)
+Создайте декоратор который реализует интерфейс ```IDecorator<I>``` и ```I``` (где ```I``` интерфейс созданный на первом шаге)
 ```C#
 	public class AngryDecorator : IDecorator<IAnimal>, IAnimal
 	{
@@ -38,7 +42,7 @@ Create decorators and implements ```IDecorator<I>``` and ```I``` (where ```I``` 
 ```
 
 
-Use
+Использование:
 ```C#
 	IAnimal duck = new Duck();
 	var angryDuck = duck.Decorate(new AngryDecorator());
@@ -50,9 +54,10 @@ Use
 ```
 
 
+***
 Repository Example
 --------
-Create interface implementation from ```IRepository<T>```
+Создайте класс который реализует интерфейс ```IRepository<T>```
 ```C#
 	public class Repository : IRepository<SampleEntity>
 	{
@@ -79,7 +84,7 @@ Create interface implementation from ```IRepository<T>```
 	}
 ```
 
-Create class specification
+Создайте классы спецификации. Например:
 ```C#
 	public class iValueRangeSpecification : SpecificationBase<SampleEntity>
 	{
@@ -98,7 +103,7 @@ Create class specification
 ```
 
 
-Use
+Использование:
 ```C#
 	DbContext db = new DbContext();
 	var rep = new Repository.Model.Repository(db);
@@ -121,4 +126,57 @@ Use
 	
 	/// Get objects from collection\database by rule
 	var resultList = rep.GetList(new iValueRangeSpecification(2, 3), 0, 10);
+```
+
+
+***
+Validate Repository Example
+--------
+Создайте декоратор для репозитория, который наследуется от ```RepositoryValidateDecoratorBase``` и реализует интерфейс декорируемого репозитория
+(*в качестве примера репозиторий был взят из предыдущего примера*)
+```C#
+	public class RepositoryValidateDecorator
+        : RepositoryValidateDecoratorBase<IRepository, SampleEntity>, IRepository
+    {
+        public override void Create_Before(SampleEntity entity)
+        {
+            if (string.IsNullOrEmpty(entity.sValue))
+                throw new ArgumentException("Entity can't be null.", "entity.sValue");
+        }
+        public override void Create(SampleEntity entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException("entity", "Entity can't be null.");
+            base.Create(entity);
+        }
+
+        public override void Update_Before(SampleEntity entity)
+        {
+            if (string.IsNullOrEmpty(entity.sValue))
+                throw new ArgumentException("Entity can't be null.", "entity.sValue");
+        }
+        public override void Update(SampleEntity entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException("entity", "Entity can't be null.");
+            base.Update(entity);
+        }
+    }
+```
+
+Использование:
+```C#
+	DataBase db = new DataBase();
+	var test = new NSPattern.Test.Repository.Model.Repository(db);
+	var testDecorate = test.Decorate(new RepositoryValidateDecorator());
+
+	Assert.Throws<ArgumentNullException>(() =>
+	{
+	    testDecorate.Create(null);
+	});
+
+	Assert.Throws<ArgumentException>(() =>
+	{
+	    testDecorate.Create(new SampleEntity());
+	});
 ```

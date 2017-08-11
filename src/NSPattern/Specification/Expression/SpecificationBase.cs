@@ -5,7 +5,7 @@ using System.Text;
 
 namespace NSPattern.Specification.Expression
 {
-    public abstract class SpecificationBase<TEntity> : ISpecificatinExpression<TEntity>
+    public abstract class SpecificationBase<TEntity> : ISpecificationExpression<TEntity>
     {
         Func<TEntity, bool> predicate;
         public abstract Expression<Func<TEntity, bool>> ToExpression();

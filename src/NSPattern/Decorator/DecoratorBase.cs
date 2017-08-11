@@ -9,10 +9,5 @@ namespace NSPattern.Decorator
     {
         public I Component { get; set; }
 
-        public DecoratorBase(I component)
-        {
-            Component = component;
-        }
-
     }
 }
