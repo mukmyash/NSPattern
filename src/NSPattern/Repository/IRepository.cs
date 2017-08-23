@@ -10,6 +10,7 @@ namespace NSPattern.Repository
         void Create(T entity);
         T GetById(long id);
         IList<T> GetList(ISpecification<T> specification, int offset, int count);
+        bool CheckExists(ISpecification<T> specification);
         void Update(T entity);
     }
 }

@@ -10,9 +10,8 @@
     <RepositoryUrl>git://github.com/mukmyash/NSPattern</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>pattern, specification-pattern,decorator-patter,repository-pattern net-standard</PackageTags>
-    <PackageReleaseNotes>Fix Specification abstract class
-Fix Repository interface</PackageReleaseNotes>
-    <Version>3.0.0</Version>
+    <PackageReleaseNotes>Repository add CHECK methode</PackageReleaseNotes>
+    <Version>3.0.1</Version>
   </PropertyGroup>
 
 </Project>

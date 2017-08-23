@@ -45,5 +45,11 @@ namespace NSPattern.Test.Repository.Model
             updateEntity.mValue = entity.mValue;
             updateEntity.sValue = entity.sValue;
         }
+
+        public bool CheckExists(ISpecification<SampleEntity> specification)
+        {
+            var specificationExpression = specification as ISpecificationExpression<SampleEntity>;
+            return DB.Samples.Any(specificationExpression.ToExpression().Compile());
+        }
     }
 }
