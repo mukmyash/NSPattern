@@ -50,5 +50,14 @@ namespace NSPattern.Decorator.Repository
         }
         public virtual void Update_After(TEntity entity) { }
 
+        public virtual void CheckExists_Before(ISpecificationExpression<TEntity> specification) { }
+        public virtual bool CheckExists(ISpecificationExpression<TEntity> specification)
+        {
+            CheckExists_Before(specification);
+            var result = Component.CheckExists(specification);
+            CheckExists_After(specification, result);
+            return result;
+        }
+        public virtual void CheckExists_After(ISpecificationExpression<TEntity> specification, bool result) { }
     }
 }
