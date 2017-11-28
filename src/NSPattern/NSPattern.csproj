@@ -10,7 +10,7 @@
     <RepositoryUrl>git://github.com/mukmyash/NSPattern</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>pattern, specification-pattern,decorator-patter,repository-pattern net-standard</PackageTags>
-    <PackageReleaseNotes>FIX Specification Expression (AND & OR)</PackageReleaseNotes>
+    <PackageReleaseNotes>FIX Specification Expression (AND  OR)</PackageReleaseNotes>
     <Version>3.0.2</Version>
   </PropertyGroup>
 
