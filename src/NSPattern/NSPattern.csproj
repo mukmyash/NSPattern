@@ -10,8 +10,8 @@
     <RepositoryUrl>git://github.com/mukmyash/NSPattern</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>pattern, specification-pattern,decorator-patter,repository-pattern net-standard</PackageTags>
-    <PackageReleaseNotes>Repository add CHECK methode</PackageReleaseNotes>
-    <Version>3.0.1</Version>
+    <PackageReleaseNotes>FIX Specification Expression (AND & OR)</PackageReleaseNotes>
+    <Version>3.0.2</Version>
   </PropertyGroup>
 
 </Project>

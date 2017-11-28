@@ -77,6 +77,32 @@ namespace NSPattern.Test.Repository
             Assert.False(result.Any(n => 2 > n.iValue && n.iValue > 3));
         }
 
+        [Fact]
+        public void SampleUseRepositoryGetList_ANDSpecification()
+        {
+            var db = GetMockDB();
+            var rep = new Repository.Model.Repository(db);
+            var spec = new iValueRangeSpecification(2, 3).And(new sValueContainsSpecification("2"));
+            var result = rep.GetList(spec, 0, 10);
+
+            Assert.Equal(1, result.Count);
+            Assert.False(result.Any(n => 2 > n.iValue && n.iValue > 3));
+            Assert.True(result.Any(n => n.sValue.Contains("2")));
+        }
+
+        [Fact]
+        public void SampleUseRepositoryGetList_ORSpecification()
+        {
+            var db = GetMockDB();
+            var rep = new Repository.Model.Repository(db);
+            var spec = new iValueRangeSpecification(2, 3).Or(new sValueContainsSpecification("1"));
+            var result = rep.GetList(spec, 0, 10);
+
+            Assert.Equal(3, result.Count);
+            Assert.True(result.Any(n => 2 <= n.iValue && n.iValue <= 3));
+            Assert.True(result.Any(n => n.sValue.Contains("1")));
+        }
+
         private DataBase GetMockDB()
         {
             return new DataBase()
