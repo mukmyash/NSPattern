@@ -22,11 +22,14 @@ namespace NSPattern.Specification.Expression
             Expression<Func<T, bool>> leftExpression = _left.ToExpression();
             Expression<Func<T, bool>> rightExpression = _right.ToExpression();
 
-            BinaryExpression andExpression = System.Linq.Expressions.Expression.OrAssign(
+            BinaryExpression andExpression = System.Linq.Expressions.Expression.Or(
                 leftExpression.Body, rightExpression.Body);
 
+            var paramExpr = System.Linq.Expressions.Expression.Parameter(typeof(T));
+            andExpression = (BinaryExpression) new ParameterReplacer(paramExpr).Visit(andExpression);
+
             return System.Linq.Expressions.Expression.Lambda<Func<T, bool>>(
-                andExpression, leftExpression.Parameters.Single());
+                andExpression, paramExpr);
         }
     }
 }
